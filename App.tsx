@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+    {/*Full Page*/}
       <View style={styles.top_border}>
         {/*Top border: Top row*/}
         <View style={styles.top_row}>
@@ -29,6 +30,29 @@ export default function App() {
           <Text style={styles.top_text}>MENU ᐯ        WISHLIST        WALLET <Text style={{ color: '#447fb8' }}>(CDN$ 0.00)
           </Text></Text>
         </View>
+      </View>
+      <View style={styles.bottom_border}>
+        {/*Bottom Border*/}
+        <Image 
+          style={styles.bottom_buttons}
+          source={require('./assets/store_icon.png')}>
+        </Image>
+        <Image 
+          style={styles.bottom_buttons}
+          source={require('./assets/news_icon.png')}>
+        </Image>
+        <Image 
+          style={styles.bottom_buttons}
+          source={require('./assets/guard_icon.png')}>
+        </Image>
+        <Image 
+          style={styles.bottom_buttons}
+          source={require('./assets/notification_icon.png')}>
+        </Image>
+        <Image 
+          style={styles.bottom_buttons}
+          source={require('./assets/menu_icon.png')}>
+        </Image>
       </View>
     </View>
   );
@@ -58,6 +82,23 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     width: '100%',
     marginTop: 10
+  },
+  // Bottom border container
+  bottom_border: {
+    bottom: 0,
+    width: '100%',
+    height: 60,
+    backgroundColor: '#202126',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+  // Bottom border buttons
+  bottom_buttons: {
+    height: 52,
+    width: 40,
+    marginHorizontal: 15
   },
   // Search box
   search_box: {
@@ -93,8 +134,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '300',
     textAlign: 'center',
-    marginHorizontal: 1
-
+    marginHorizontal: 1,
   },
   //Main background
   container: {
