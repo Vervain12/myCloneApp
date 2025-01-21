@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
   return (
@@ -45,14 +45,27 @@ export default function App() {
           style={styles.bottom_buttons}
           source={require('./assets/guard_icon.png')}>
         </Image>
-        <Image 
-          style={styles.bottom_buttons}
-          source={require('./assets/notification_icon.png')}>
-        </Image>
+        <TouchableOpacity onPress={()=>{alert ("Alert Button Pressed!")}}>
+          <Image 
+            style={styles.bottom_buttons}
+            source={require('./assets/notification_icon.png')}>
+          </Image>
+        </TouchableOpacity>
         <Image 
           style={styles.bottom_buttons}
           source={require('./assets/menu_icon.png')}>
         </Image>
+      </View>
+      <View style={{
+        flexDirection: 'row',
+        height: 38,
+        borderWidth: 1,
+        borderColor: '#1e405e',
+        alignItems: 'baseline',
+        marginHorizontal: 12,}}>
+        <Text style={styles.upper_store_text}>
+          FEATURED & RECOMMENDED                          
+        </Text>
       </View>
     </View>
   );
@@ -142,5 +155,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#1e405e',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  // Store Display
+  upper_store_text: {
+    color: '#ffffff',
+    fontSize: 13,
+    fontWeight: '300',
+    textAlignVertical: 'top',
+    marginHorizontal: 1,
+    justifyContent: 'flex-start',
+    flexDirection: 'row',
+    alignItems: 'baseline',
   },
 });
