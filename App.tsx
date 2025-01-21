@@ -56,13 +56,7 @@ export default function App() {
           source={require('./assets/menu_icon.png')}>
         </Image>
       </View>
-      <View style={{
-        flexDirection: 'row',
-        height: 38,
-        borderWidth: 1,
-        borderColor: '#1e405e',
-        alignItems: 'baseline',
-        marginHorizontal: 12,}}>
+      <View style={styles.upper_store_text_box}>
         <Text style={styles.upper_store_text}>
           FEATURED & RECOMMENDED                          
         </Text>
@@ -156,15 +150,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  // Store Display
   upper_store_text: {
     color: '#ffffff',
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: '300',
-    textAlignVertical: 'top',
-    marginHorizontal: 1,
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    alignItems: 'baseline',
+  },
+
+  // Box for the store display text to be positioned correctly
+  upper_store_text_box: {
+    flexDirection: 'column',
+    height: 20,
+    borderWidth: 1,
+    borderColor: '#1e405e',
+    textAlign: 'left',
+    top: -265,
+    left: -80,
   },
 });
