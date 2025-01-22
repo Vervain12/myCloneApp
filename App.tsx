@@ -61,6 +61,13 @@ export default function App() {
           FEATURED & RECOMMENDED                          
         </Text>
       </View>
+      <View style={styles.special_offers}>
+        <View style={styles.special_offers_text_box}>
+          <Text style={styles.special_offers_text}>
+            SPECIAL OFFERS
+          </Text>
+        </View>
+      </View>
     </View>
   );
 }
@@ -150,13 +157,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  //Store Display
   upper_store_text: {
     color: '#ffffff',
     fontSize: 15,
-    fontWeight: '300',
+    fontWeight: 'bold',
   },
 
-  // Box for the store display text to be positioned correctly
+  //Box for the store display text to be positioned correctly
   upper_store_text_box: {
     flexDirection: 'column',
     height: 20,
@@ -164,6 +172,37 @@ const styles = StyleSheet.create({
     borderColor: '#1e405e',
     textAlign: 'left',
     top: -265,
-    left: -80,
+    left: -75,
+  },
+
+  //Special offers box
+  special_offers: {
+    flex: 1,
+    backgroundColor: '#1a2e47',
+    bottom: 60,
+    width: '100%',
+    height: 325,
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row'
+  },
+
+  //Special offers text
+  special_offers_text: {
+    color: '#ffffff',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+
+  //Box for the special offers text to be positioned correctly
+  special_offers_text_box: {
+    flexDirection: 'column',
+    height: 20,
+    borderWidth: 1,
+    borderColor: '#1a2e47',
+    textAlign: 'left',
+    top: -125,
+    left: -120,
   },
 });
