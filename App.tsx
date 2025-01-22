@@ -65,7 +65,7 @@ export default function App() {
     source={require('./assets/pic.jpg')}
   />
    <Text style={styles.cardTitle}>Heroes of Hammerwatch II</Text>
-  <Text style={styles.cardDiscount}>50% off - Now $14.99</Text>
+  <Text style={styles.cardDiscount}>-15% C̶D̶N̶$̶2̶3̶.4̶9̶  CDN$19.96</Text>
       </View>
       <View style={styles.special_offers}>
         <View style={styles.special_offers_text_box}>
