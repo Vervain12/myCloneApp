@@ -13,6 +13,7 @@ export default function App() {
               style={styles.steam_png}
               source={require('./assets/steam.png')}
             />
+            <Image style={{height: 18, width: 18, left: 125, tintColor: '#9ea0a2', opacity: 0.7}} source={require('./assets/search_icon.png')}/>
           </View>
           <Image
             style={styles.top_button}
@@ -27,7 +28,7 @@ export default function App() {
         {/* Top border: Bottom row */}
         <View style={styles.bottom_row}>
           <Text style={styles.top_text}>
-            MENU ᐯ WISHLIST WALLET{' '}
+            MENU ᐯ        WISHLIST       WALLET{' '}
             <Text style={{ color: '#447fb8' }}>(CDN$ 0.00)</Text>
           </Text>
         </View>
@@ -93,6 +94,11 @@ export default function App() {
       <View style={styles.special_offers}>
         <Text style={styles.special_offers_text}>
           SPECIAL OFFERS
+          <View style={{position: 'absolute'}}>
+            <Text style={{color: '#9ea0a2', left: 185, top: 5, fontSize: 13}}>
+              More {'>'}
+            </Text>
+          </View>
         </Text>
         <Image style={
           styles.game2_image}
@@ -243,7 +249,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '400',
     position: 'absolute', 
-    top: 15,             
+    top: 13,             
     left: 10,  
   },
 });
