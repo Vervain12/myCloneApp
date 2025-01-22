@@ -60,12 +60,26 @@ export default function App() {
         <Text style={styles.upper_store_text}>
           FEATURED & RECOMMENDED                          
         </Text>
+        <Image
+    style={styles.mid_images}
+    source={require('./assets/pic.jpg')}
+  />
+   <Text style={styles.cardTitle}>Heroes of Hammerwatch II</Text>
+  <Text style={styles.cardDiscount}>50% off - Now $14.99</Text>
       </View>
       <View style={styles.special_offers}>
         <View style={styles.special_offers_text_box}>
           <Text style={styles.special_offers_text}>
             SPECIAL OFFERS
           </Text>
+          <View style={styles.special_offers_image_box}>
+    <Image
+      style={styles.special_offers_image}
+      source={require('./assets/pic2.jpg')} // Replace with your actual image file
+    />
+  </View>
+          
+          
         </View>
       </View>
     </View>
@@ -74,6 +88,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   // Top border container
+  // Middle Area
+  middle_area: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  mid_images: {
+    width: 405,
+    height: 196,
+  },
   top_border: {
     top: 0,
     width: '100%',
@@ -84,6 +107,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 30
   },
+  
   // Top border top row
   top_row: {
     flexDirection: 'row',
@@ -162,6 +186,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 15,
     fontWeight: 'bold',
+    right: -100,
   },
 
   //Box for the store display text to be positioned correctly
@@ -193,6 +218,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 15,
     fontWeight: 'bold',
+    right: -125,
   },
 
   //Box for the special offers text to be positioned correctly
@@ -203,6 +229,47 @@ const styles = StyleSheet.create({
     borderColor: '#1a2e47',
     textAlign: 'left',
     top: -125,
-    left: -120,
+    left: -100,
+  },
+  special_offers_image_box: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    marginTop: 10, 
+  },
+  
+  special_offers_image: {
+    width: 405, // Matches mid_images width
+    height: 225, // Matches mid_images height
+    resizeMode: 'cover',
+    right: -100, 
+    bottom: -90, // Ensures the image fills the area proportionally
+  },
+  card: {
+    alignItems: 'center', // Center the content in the card
+    marginVertical: 15,   // Add space between each card
+    backgroundColor: '#292c35', // Card background color
+    borderRadius: 8,
+    padding: 10,
+    width: '90%', // Adjust the width of the card
+  },
+  cardImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'contain',
+  },
+  cardTitle: {
+    fontSize: 18,
+    color: '#ffffff',
+    fontWeight: 'bold',
+    marginTop: 10,
+    bottom: -10,
+  },
+  cardDiscount: {
+    fontSize: 14,
+    color: '#b8d446', // Green color for the discount
+    marginTop: 5,
+    right: -100, 
+    bottom: -10,
   },
 });
