@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     height: 20,
     borderWidth: 1,
-    borderColor: '#1e405e',
+    borderColor: '#1a2e47',
     textAlign: 'left',
     top: -125,
     left: -120,
