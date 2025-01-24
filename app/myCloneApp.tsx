@@ -1,4 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
@@ -11,17 +10,17 @@ export default function App() {
           <View style={styles.search_box}>
             <Image
               style={styles.steam_png}
-              source={require('./assets/steam.png')}
+              source={require('../assets/steam.png')}
             />
-            <Image style={{height: 18, width: 18, left: 125, tintColor: '#9ea0a2', opacity: 0.7}} source={require('./assets/search_icon.png')}/>
+            <Image style={{height: 18, width: 18, left: 125, tintColor: '#9ea0a2', opacity: 0.7}} source={require('../assets/search_icon.png')}/>
           </View>
           <Image
             style={styles.top_button}
-            source={require('./assets/dots.png')}
+            source={require('../assets/dots.png')}
           />
           <Image
             style={styles.profile_picture}
-            source={require('./assets/pfp.png')}
+            source={require('../assets/pfp.png')}
           />
         </View>
 
@@ -38,25 +37,25 @@ export default function App() {
         {/* Bottom Border */}
         <Image
           style={styles.bottom_buttons}
-          source={require('./assets/store_icon.png')}
+          source={require('../assets/store_icon.png')}
         />
         <Image
           style={styles.bottom_buttons}
-          source={require('./assets/news_icon.png')}
+          source={require('../assets/news_icon.png')}
         />
         <Image
           style={styles.bottom_buttons}
-          source={require('./assets/guard_icon.png')}
+          source={require('../assets/guard_icon.png')}
         />
         <TouchableOpacity onPress={() => alert('Alert Button Pressed!')}>
           <Image
             style={styles.bottom_buttons}
-            source={require('./assets/notification_icon.png')}
+            source={require('../assets/notification_icon.png')}
           />
         </TouchableOpacity>
         <Image
           style={styles.bottom_buttons}
-          source={require('./assets/menu_icon.png')}
+          source={require('../assets/menu_icon.png')}
         />
       </View>
 
@@ -68,7 +67,7 @@ export default function App() {
           <View style={styles.featured_game}>
             <Image style={
               styles.game1_image}
-              source={require('./assets/game1.jpg')}/>
+              source={require('../assets/game1.jpg')}/>
 
             <Text style={styles.game_text}>
               Tom Clancy's Rainbow Six® Siege
@@ -102,7 +101,7 @@ export default function App() {
         </Text>
         <Image style={
           styles.game2_image}
-          source={require('./assets/game2.jpg')}/>
+          source={require('../assets/game2.jpg')}/>
       </View>
     </View>
   );
