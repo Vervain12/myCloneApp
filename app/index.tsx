@@ -10,6 +10,7 @@ const Home = () => {
                 Welcome to our App!
             </Text>
             <ButtonTemplate link={'/myCloneApp'} text={"My Clone App"} color="red"/>
+            <ButtonTemplate link={'/lab_3'} text={"Lab 3"} color="blue"/>
             <View>
                 {FruitList.map((fruit, index) => (
                     <Text key={index}>{fruit}</Text>
