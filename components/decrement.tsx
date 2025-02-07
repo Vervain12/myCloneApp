@@ -10,7 +10,7 @@ type Props = {
 const DecrementButton: React.FC<Props> = ({ value, setValue }) =>
 {
     return (
-        <View>
+        <View style={styles.button_style}>
             <Button title="Decrement" onPress={() => setValue(value - 1)}/>
         </View>
     )
@@ -18,7 +18,14 @@ const DecrementButton: React.FC<Props> = ({ value, setValue }) =>
 
 const styles = StyleSheet.create({ 
     button_style: {
-        
+        backgroundColor: '#ff7f7f',
+        borderColor: '#D2042D',
+        borderWidth: 3,
+        borderTopLeftRadius: 7.5,
+        borderTopRightRadius: 7.5,
+        borderBottomLeftRadius: 7.5,
+        borderBottomRightRadius: 7.5,
+        right: -5
     },
 })
 

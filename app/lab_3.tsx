@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import { useState } from "react";
 import DecrementButton from "../components/decrement";
 import IncrementButton from "../components/increment";
+import ButtonTemplate from "../components/button_template";
 
 export default function App() {
     const [value, setValue] = useState(0);
