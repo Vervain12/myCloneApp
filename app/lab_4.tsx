@@ -18,8 +18,10 @@ const Destination: React.FC<DestinationProps> = ({ id, location, price, temp }) 
     };
 
     return (
-        <TouchableOpacity onPress={() => addToList(id)}>
-            <Text>{id} {location} Price: {price}</Text>
+        <TouchableOpacity 
+            style={styles.button}
+            onPress={() => addToList(id)}>
+            <Text>{id} {location} Price: {price} {"\u2705"}</Text>
         </TouchableOpacity>
     );
 };
@@ -38,3 +40,13 @@ export default function Lab() {
         </View>
     )
 }
+
+
+const styles = StyleSheet.create({ 
+    button: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    }
+})
