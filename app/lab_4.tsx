@@ -9,15 +9,23 @@ type DestinationProps = {
     temp: string;
 }
 
-const Destination: React.FC<DestinationProps> = ({id, location, price, temp}) => (
-    <View>
-        <Text>{id} {location} Price: {price}</Text>
-    </View>
-);
+const Destination: React.FC<DestinationProps> = ({ id, location, price, temp }) => {
+    const [isClicked, setIsClicked] = useState<number[]>([]);
+
+    const addToList = (index: number) => {
+        const newList = [...isClicked, index];
+        setIsClicked(newList);
+    };
+
+    return (
+        <TouchableOpacity onPress={() => addToList(id)}>
+            <Text>{id} {location} Price: {price}</Text>
+        </TouchableOpacity>
+    );
+};
 
 export default function Lab() {
     const [vacationList, setVacationList] = useState(vacationDestinations);
-
 
     return (
         <View>
