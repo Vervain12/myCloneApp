@@ -12,38 +12,40 @@ type DestinationProps = {
 const Destination: React.FC<DestinationProps> = ({ id, location, price, temp }) => {
     const [isClicked, setIsClicked] = useState<number[]>([]);
 
-    const addToList = (index: number) => {
-        const newList = [...isClicked, index];
-        setIsClicked(newList);
-    };
-
+        const addToList = (index: number) => {
+            if(!isClicked.includes(index)) {
+            const newList = [...isClicked, index];
+            setIsClicked(newList);
+            }
+        };
+        
     return (
-        <View style={{backgroundColor:"blue"}}>
-            <TouchableOpacity 
-                style={styles.button}
-                onPress={() => addToList(id)}>
-               <Text>{id} {location} Price: {price} {isClicked.includes(id) ? "\u2705" : ""}</Text>
-            </TouchableOpacity>
-        </View>
-
+        <TouchableOpacity
+            style={styles.listItem}
+            onPress={() => addToList(id)}>
+            <Text style={styles.itemText}>
+                {id}. {location} Price: ${price} {isClicked.includes(id) ? "\u2705" : ""}
+            </Text>
+        </TouchableOpacity>
     );
 };
 
 export default function Lab() {
     const [vacationList, setVacationList] = useState(vacationDestinations);
-    const [isClicked, setIsClicked] = useState<number[]>([]);
-
-    const addToList = (index: number) => {
-        const newList = [...isClicked, index];
-        setIsClicked(newList);
-    };
 
     return (
-        <View>
-            <Text>Choose destinations you would like to quote for</Text>
+        <View style={styles.container}>
+            <Text style={styles.headerText}>Choose destinations you would like to quote for</Text>
             <FlatList
                 data={vacationList}
-                renderItem={({item, index}) =><TouchableOpacity onPress={()=>addToList(index)}><Text>{item.id} {item.location} Price: {item.price} {isClicked.includes(index) ? "\u2705" : ""}</Text></TouchableOpacity> }
+                renderItem={({item}) => 
+                    <Destination
+                        id={item.id}
+                        location={item.location}
+                        price={item.price}
+                        temp={item.average_yearly_temperature}
+                    />
+                }
                 keyExtractor={(item, index) => index.toString()}
             />
         </View>
@@ -52,10 +54,22 @@ export default function Lab() {
 
 
 const styles = StyleSheet.create({ 
-    button: {
+    container: {
+        padding: 16,
+        backgroundColor: "#fff",
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-
-    }
+      },
+      headerText: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginBottom: 16,
+      },
+      listItem: {
+        padding: 12,
+        borderBottomWidth: 1,
+        borderBottomColor: "#ccc",
+      },
+      itemText: {
+        fontSize: 16,
+      },
 })
