@@ -2,7 +2,7 @@ import { StyleSheet, FlatList, Text, View, Button, Image, TouchableOpacity } fro
 import { useState, useEffect } from "react";
 
 export default function CallApi() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<any>(null);
 
     const fetchAPI = async () => {
         const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
