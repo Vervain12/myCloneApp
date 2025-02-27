@@ -19,8 +19,8 @@ export default function Lab() {
             <Text>Choose destinations you would like to quote for</Text>
             <FlatList
                 data={vacationList}
-                keyExtractor={(item, index) => index.toString()}                
-                renderItem={({item, index}) =>
+                keyExtractor={(index) => index.toString()}                
+                renderItem={({item}) =>
                 <TouchableOpacity
                     onPress={ ()=>toggleItemInList(item.id)}>
                         <Text style={styles.button}>
