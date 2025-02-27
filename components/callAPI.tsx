@@ -23,8 +23,17 @@ export default function CallApi() {
 
     return (
         <View>
-            <Text>{data.title}</Text>
-            <Text>{data.body}</Text>
+            <Text style={styles.text}>{data.title}</Text>
+            <Text style={styles.text}>{data.body}</Text>
         </View>
     )
-}
+};
+
+const styles = StyleSheet.create({
+    text: {
+        margin: 10,
+        top: 250,
+        flexWrap: 'nowrap',
+        fontSize: 15,
+    }   
+});

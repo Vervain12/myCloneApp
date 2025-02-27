@@ -13,7 +13,11 @@ export default function Lab() {
         <View>
             <TouchableOpacity
             style={styles.button}
-                onPress={()=>ToggleVisibility()}/>
+                onPress={()=>ToggleVisibility()}>
+                        <Text style={styles.text}>
+                            Call Api                        
+                        </Text>
+                    </TouchableOpacity>
             {toggle ? <CallApi/> : <></>}
         </View>
     )
@@ -23,7 +27,14 @@ const styles = StyleSheet.create({
     button: {
         padding: 10,
         marginVertical: 5,
-        backgroundColor: '#f8f8f8',
-        borderRadius: 5
+        backgroundColor: '#4f4f4f',
+        borderRadius: 5,
+        top: 250,
+        width: 150,
+        left: 100
+    },
+    text: {
+        color: 'white',
+        left: '30%'
     }
 });
